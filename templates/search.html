@@ -1,23 +1,22 @@
 {%extends 'base.html'%}
 {%block content%}
-  <!-- CATEGORY TITLE -->
-  <h3 class="text-uppercase text-warning mb-4" style="letter-spacing:2px;">
-    CATEGORY - {{ category.category_name }}
+<h3 class="text-warning mb-4" style="letter-spacing:2px;">
+    Search Tree - {{ keyword }}
   </h3>
 
   <!-- POSTS -->
   <div class="row">
-    {% if posts %}
-      {% for post in posts %}
+    {% if blogs %}
+      {% for i in blogs %}
         <div class="col-md-6 mb-4">
           <div class="card border-0">
             <div class="card-body p-0">
-              <h4><a href="{% url 'blogs' post.slug %}" class="text-dark">{{ post.title }}</a></h4>
+              <h4><a href="{% url 'blogs' i.slug %}" class="text-dark">{{ i.title }}</a></h4>
               <small class="text-muted">
-                {{ post.created_at|timesince }} ago | {{ post.author }}
+                {{ i.created_at|timesince }} ago | {{ i.author }}
               </small>
               <p class="mt-2">
-                {{ post.short_description|truncatewords:20 }}
+                {{ i.short_description|truncatewords:20 }}
               </p>
             </div>
           </div>
@@ -29,6 +28,4 @@
   </div>
 
 </div>
-
-
 {%endblock%}
