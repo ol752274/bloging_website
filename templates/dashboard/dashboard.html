@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="row">
+
+    <!-- LEFT SIDEBAR -->
+    {% include 'dashboard/sidebar.html' %}
+
+    <!-- RIGHT CONTENT -->
+    <div class="col-md-9">
+        <div class="row">
+            <span> logged in as: {{ user }} </span>
+            <!-- ALL CATEGORIES -->
+            <div class="col-md-6">
+                <div class="card border-default mb-3">
+                    <div class="card-header text-center text-uppercase font-weight-bold">
+                        All Categories
+                    </div>
+                    <div class="card-body text-dark">
+                        <h5 class="card-title text-center">
+                            {{ category_count }}
+                        </h5>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ALL BLOGS -->
+            <div class="col-md-6">
+                <div class="card border-default mb-3">
+                    <div class="card-header text-center text-uppercase font-weight-bold">
+                        All Blogs
+                    </div>
+                    <div class="card-body text-dark">
+                        <h5 class="card-title text-center">
+                            {{ blogs_count }}
+                        </h5>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
