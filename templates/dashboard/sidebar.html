@@ -11,9 +11,9 @@
             Categories
         </a>
 
-        <a class="nav-link text-dark {% if request.resolver_match.url_name == 'blogs' %}bg-warning{% endif %}"
-           href="">
-            Blogs
+        <a class="nav-link text-dark {% if request.resolver_match.url_name == 'posts' %}bg-warning{% endif %}"
+           href="{% url 'posts' %}">
+            Posts
         </a>
 
         <a class="nav-link text-dark"
