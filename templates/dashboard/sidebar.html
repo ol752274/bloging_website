@@ -5,6 +5,12 @@
            href="{% url 'dashboard' %}">
             Dashboard
         </a>
+        {% if perms.auth.view_user%}
+        <a class="nav-link text-dark {% if request.resolver_match.url_name == 'users' %}bg-warning{% endif %}"
+           href="{% url 'users' %}">
+            Users
+        </a>
+        {%endif%}
 
         <a class="nav-link text-dark {% if request.resolver_match.url_name == 'categories' %}bg-warning{% endif %}"
            href="{% url 'categories' %}">
